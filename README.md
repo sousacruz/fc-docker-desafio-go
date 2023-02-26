@@ -14,10 +14,20 @@ Vimos no curso que é possível utilizar o host para programar sem necessariamen
 
     docker run --rm --name golang -it -v ./go:/go golang:latest bash
 
-Como ainda não sei nada de `go`, me concentrei no desafo e apenas utilizei o mínimo para imprimir a mensagem no console escrevendo a função `./go/src/app/main.go` que resultou o executável `fullcycle` a partir do comando executada no mesmo diretório da função:
+Como ainda não sei nada de `go`, me concentrei no desafo e apenas utilizei o mínimo para imprimir a mensagem no console escrevendo a função `./go/src/app/main.go` que resultou o executável `fullcycle` a partir do comando a seguir, executado dentro do container no mesmo diretório da função:
 
     go build
 
 ## Criando a imagem
 
 Para que a imagem atenda aos requisitos de tamanho proposto no desafio, nossa imagem base teria que ser a mínima possível. Por isso, um opção foi usar como base a imagem `scratch` e depois de adicionar nosso `app`, incluir um comando para executá-lo, como pode ser visto no `Dockerfile` .
+
+## Publicando a imagem
+
+Depois disso o trabalho foi só fazer `build`da imagem:
+
+    docker push sous4cruz/fullcycle:latest
+
+E finalmente, antes de publicá-la no **Docker Hub**, por que não dar um `docker images`para conferir se o tamanho estava dentro dos limites do desafio e um `docker run` para verificar se está funcionando, neh?
+
+    docker push sous4cruz/fullcycle:latest
