@@ -26,7 +26,7 @@ Para que a imagem atenda aos requisitos de tamanho proposto no desafio, nossa im
 
 Depois disso o trabalho foi só fazer `build`da imagem:
 
-    docker push sous4cruz/fullcycle:latest
+    docker build -t sous4cruz/fullcycle:latest .
 
 E finalmente, antes de publicá-la no **Docker Hub**, por que não dar um `docker images`para conferir se o tamanho estava dentro dos limites do desafio e um `docker run` para verificar se está funcionando, neh?
 
